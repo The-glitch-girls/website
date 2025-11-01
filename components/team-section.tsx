@@ -4,17 +4,17 @@ const teamMembers = [
   {
     name: "Shiara Arauzo",
     role: "Game Developer",
-    image: "/portrait-woman-game-developer-pixel-art-style.jpg",
+    image: "/team/shiara-arauzo.jpeg",
   },
   {
     name: "Melissa Huerta",
     role: "Game Developer",
-    image: "/portrait-woman-programmer-pixel-art-style.jpg",
+    image: "/team/melissa-huerta.jpg",
   },
   {
     name: "Ariadna Mestanza",
     role: "UI Artist",
-    image: "/portrait-woman-ui-designer-pixel-art-style.jpg",
+    image: "/team/ariadna-mestanza.jpg",
   },
   {
     name: "Selene Negrón",
