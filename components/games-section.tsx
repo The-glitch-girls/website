@@ -4,28 +4,24 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const releasedGames = [
   {
-    title: "Neon Runners",
-    description: "Fast-paced platformer through a cyberpunk cityscape",
+    title: "Cupid: Encuentra tu pareja ideal",
+    description: "Step into both sides of a deceptive online relationship and uncover the dark truth behind every profile—because in this story, no one is who they seem.",
     image: "/retro-pixel-art-cyberpunk-platformer-game.jpg",
   },
   {
-    title: "Glitch Protocol",
-    description: "Puzzle adventure in a corrupted digital world",
+    title: "Sir Isaac's Pastry & Apples",
+    description: "Serve customers based on their mood and use Newton’s science (and pastries) to restore emotional balance to the universe.",
     image: "/retro-pixel-art-puzzle-game-glitch-aesthetic.jpg",
   },
 ]
 
 const upcomingGames = [
   {
-    title: "Pixel Dreamers",
-    description: "Narrative-driven RPG set in a neon utopia",
+    title: "W.A.V.E.S",
+    description: "Videogame made for the game off game jam",
     image: "/retro-pixel-art-rpg-neon-city.jpg",
   },
-  {
-    title: "Circuit Breakers",
-    description: "Co-op action game with retro-futuristic vibes",
-    image: "/retro-pixel-art-action-game-futuristic.jpg",
-  },
+
 ]
 
 export function GamesSection() {
@@ -42,13 +38,13 @@ export function GamesSection() {
               value="released"
               className="text-xs md:text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
-              RELEASED
+              Released
             </TabsTrigger>
             <TabsTrigger
               value="upcoming"
               className="text-xs md:text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
-              UPCOMING
+              Upcoming
             </TabsTrigger>
           </TabsList>
 
@@ -89,7 +85,7 @@ export function GamesSection() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 text-xs font-bold">
-                      COMING SOON
+                      Coming soon
                     </div>
                   </div>
                   <CardHeader>

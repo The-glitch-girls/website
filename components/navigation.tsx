@@ -8,7 +8,6 @@ export function Navigation() {
   const pathname = usePathname()
 
   const links = [
-    { href: "/", label: "Home" },
     { href: "/games", label: "Games" },
     { href: "/team", label: "Team" },
     { href: "/contact", label: "Contact Us" },
@@ -19,7 +18,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-primary neon-glow text-sm md:text-base hover:text-secondary transition-colors">
-            THE GLITCH GIRLS
+            The glitch girls
           </Link>
 
           <div className="flex gap-4 md:gap-6">

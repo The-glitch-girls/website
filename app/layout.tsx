@@ -12,8 +12,7 @@ const pressStart = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: "The Glitch Girls | Indie Game Studio",
-  description: "Retro-futuristic indie game studio creating pixel art adventures",
-  generator: "v0.app",
+  description: "Peruvian indie game studio creating pixel art adventures",
 }
 
 export default function RootLayout({
