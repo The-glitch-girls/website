@@ -207,7 +207,7 @@ export default function Home() {
       </div>
       <div className="p-5">
         <h3 className="text-white font-bold text-2xl mb-1">Cupid: Encuentra a tu pareja ideal</h3>
-        <p className="text-white/70 text-sm mb-4">Cyberpunk Adventure</p>
+        <p className="text-white/70 text-sm mb-4">Narrative videogame</p>
         <div className="flex gap-3">
           <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
           <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
@@ -239,7 +239,7 @@ export default function Home() {
       </div>
       <div className="p-5">
         <h3 className="text-white font-bold text-2xl mb-1">Echoes of the amazon</h3>
-        <p className="text-white/70 text-sm mb-4">Endless Runner</p>
+        <p className="text-white/70 text-sm mb-4">Top down game</p>
         <div className="flex gap-3">
           <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
           <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
