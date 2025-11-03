@@ -197,96 +197,94 @@ export default function Home() {
   </div>
 </div>
 
+{activeFilter === "released" ? (
+  <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
+    {/* Large Card */}
+    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+      <div className="aspect-[4/3] relative">
+        <img src="/games/game-1.png" alt="Neon Pulse" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t " />
+      </div>
+      <div className="p-5">
+        <h3 className="text-white font-bold text-2xl mb-1">Cupid: Encuentra a tu pareja ideal</h3>
+        <p className="text-white/70 text-sm mb-4">Cyberpunk Adventure</p>
+        <div className="flex gap-3">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
+        </div>
+      </div>
+    </div>
 
-            {activeFilter === "released" ? (
-              <div className="relative max-w-6xl mx-auto h-[1100px]">
-                {/* Game Card 1 - Top Left, Large */}
-                <div
-                  className="absolute w-[40%] group rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"
-                  style={{ top: "0", left: "0", zIndex: 1 }}
-                >
-                  <div className="aspect-[3/4] relative">
-                    <img
-                      src="/cyberpunk-girl-with-neon-lights.jpg"
-                      alt="Neon Pulse game"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-300/90 via-purple-300/40 to-transparent" />
-                    <div className="absolute bottom-6 left-0 right-0 px-6">
-                      <h3 className="text-white font-bold text-2xl mb-1">Neon Pulse</h3>
-                      <p className="text-white/80 text-sm">Cyberpunk Adventure</p>
-                    </div>
-                  </div>
-                </div>
+    {/* Medium Card */}
+    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+      <div className="aspect-[4/3] relative">
+        <img src="/games/game-2.png" alt="Digital Dreams" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t " />
+      </div>
+      <div className="p-5">
+        <h3 className="text-white font-bold text-2xl mb-1">Sir Isaac Pastry</h3>
+        <p className="text-white/70 text-sm mb-4">Puzzle Platformer</p>
+        <div className="flex gap-3">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
+        </div>
+      </div>
+    </div>
 
-                {/* Game Card 2 - Top Right, Medium */}
-                <div
-                  className="absolute w-[48%] group rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"
-                  style={{ top: "0", right: "0", zIndex: 2 }}
-                >
-                  <div className="aspect-[4/3] relative">
-                    <img
-                      src="/silhouette-girl-gamer-pink-background.jpg"
-                      alt="Digital Dreams game"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-green-300/90 via-green-300/40 to-transparent" />
-                    <div className="absolute bottom-6 left-0 right-0 px-6">
-                      <h3 className="text-white font-bold text-2xl mb-1">Digital Dreams</h3>
-                      <p className="text-white/80 text-sm">Puzzle Platformer</p>
-                    </div>
-                  </div>
-                </div>
+    {/* Small Card */}
+    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+      <div className="aspect-[4/3] relative">
+        <img src="/games/game-3.jpg" alt="Glitch Runner" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t " />
+      </div>
+      <div className="p-5">
+        <h3 className="text-white font-bold text-2xl mb-1">Echoes of the amazon</h3>
+        <p className="text-white/70 text-sm mb-4">Endless Runner</p>
+        <div className="flex gap-3">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+) : (
+  // COMING SOON - mismo layout
+<div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300 w-[320px] h-[400px]">
+  <div className="relative w-full h-[300px]"> {/* ✅ altura fija */}
+    <img
+      src="/games/game-3.jpg"
+      alt="W.A.V.E.S"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-purple-400/60 via-purple-200/30 to-transparent" />
+  </div>
 
-                {/* Game Card 3 - Middle Left, Small */}
-                <div
-                  className="absolute w-[35%] group rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"
-                  style={{ top: "480px", left: "0", zIndex: 3 }}
-                >
-                  <div className="aspect-[16/9] relative">
-                    <img
-                      src="/cyberpunk-girl-with-neon-lights.jpg"
-                      alt="Glitch Runner game"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-green-300/90 via-green-300/40 to-transparent" />
-                    <div className="absolute bottom-6 left-0 right-0 px-6">
-                      <h3 className="text-white font-bold text-2xl mb-1">Glitch Runner</h3>
-                      <p className="text-white/80 text-sm">Endless Runner</p>
-                    </div>
-                  </div>
-                </div>
+  <div className="p-5">
+    <h3 className="text-white font-bold text-2xl mb-1">W.A.V.E.S</h3>
+    <p className="text-white/70 text-sm mb-4">Endless Runner</p>
+    <div className="flex gap-3">
+      <a
+        href="https://github.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white/70 hover:text-white"
+      >
+        <i className="fa-brands fa-github text-xl" />
+      </a>
+      <a
+        href="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white/70 hover:text-white"
+      >
+        <i className="fa-solid fa-globe text-xl" />
+      </a>
+    </div>
+  </div>
+</div>
+)}
 
-                {/* Game Card 4 - Bottom Right, Large */}
-                <div
-                  className="absolute w-[52%] group rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-2"
-                  style={{ top: "420px", right: "0", zIndex: 4 }}
-                >
-                  <div className="aspect-[3/4] relative">
-                    <img
-                      src="/futuristic-girl-with-holographic-visor.jpg"
-                      alt="Cyber Shift game"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-300/90 via-purple-300/40 to-transparent" />
-                    <div className="absolute bottom-6 left-0 right-0 px-6">
-                      <h3 className="text-white font-bold text-2xl mb-1">Cyber Shift</h3>
-                      <p className="text-white/80 text-sm">Action RPG</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="flex items-center justify-center py-20">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-purple-300/20 to-green-300/20 rounded-3xl flex items-center justify-center mb-6 mx-auto border border-white/10">
-                    <span className="text-6xl">🎮</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Exciting Games Coming Soon</h3>
-                  <p className="text-white/60">Stay tuned for our upcoming releases</p>
-                </div>
-              </div>
-            )}
+
           </div>
         </section>
       )}
