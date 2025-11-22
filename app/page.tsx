@@ -482,13 +482,13 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-6">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/theglitchgirls/" className="text-white/60 hover:text-white transition-colors">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/109253587/admin/dashboard/" className="text-white/60 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="https://github.com/The-glitch-girls" className="text-white/60 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </a>
             </div>
