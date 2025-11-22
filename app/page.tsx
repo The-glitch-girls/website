@@ -312,6 +312,9 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Shiara Arauzo</h3>
           <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
           <div className="flex items-center justify-center gap-3">
+            <a href="https://github.com/shiarauzo" className="text-white/60 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+            </a>
             <a href="https://www.instagram.com/sh.iara221b/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
@@ -339,6 +342,9 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Melissa Huerta</h3>
           <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
           <div className="flex items-center justify-center gap-3">
+            <a href="https://github.com/melissahuertadev" className="text-white/60 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+            </a>
             <a href="https://www.instagram.com/melissahuerta.dev/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
@@ -366,6 +372,11 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Malu Munayco</h3>
           <p className="text-purple-400 text-sm mb-4">Game Developer</p>
           <div className="flex items-center justify-center gap-3">
+            <a href="https://github.com/malumunayco" className="text-white/60 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+            </a>
+
+
             <a href="https://www.instagram.com/malumunayco/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
