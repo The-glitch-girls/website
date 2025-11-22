@@ -358,7 +358,7 @@ export default function Home() {
         <div className="flex flex-col items-center text-center">
           <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
             <img
-              src="/team-photo/malu-munayco.jpg"
+              src="/team-photo/malu-munayco.jpeg"
               alt="Malu Munayco"
               className="w-full h-full object-cover"
             />
@@ -412,7 +412,7 @@ export default function Home() {
         <div className="flex flex-col items-center text-center">
           <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
             <img
-              src="/team-photo/selene-negron.jpg"
+              src="/team-photo/selene-negron.jpeg"
               alt="Selene Negrón"
               className="w-full h-full object-cover"
             />
