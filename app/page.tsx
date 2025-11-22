@@ -88,7 +88,7 @@ export default function Home() {
       <div className="flex justify-center items-end gap-12 max-w-7xl mx-auto px-6">
         {/* Game Card 1 */}
         <div
-          onClick={() => setActiveSection("games")}
+          onClick={() => window.location.href = "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal"}
           className="relative w-[340px] h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
           style={{ transform: "rotate(-3deg)" }}
         >
@@ -108,7 +108,7 @@ export default function Home() {
 
         {/* Game Card 2 */}
         <div
-          onClick={() => setActiveSection("games")}
+          onClick={() => window.location.href = "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples"}
           className="relative w-[380px] h-[540px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
         >
           <img
@@ -127,7 +127,7 @@ export default function Home() {
 
         {/* Game Card 3 */}
         <div
-          onClick={() => setActiveSection("games")}
+          onClick={() => window.location.href = "https://piratelicorne.itch.io/echoes-of-the-amazon"}
           className="relative w-[340px] h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
           style={{ transform: "rotate(3deg)" }}
         >
