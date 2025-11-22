@@ -312,16 +312,19 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Shiara Arauzo</h3>
           <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
           <div className="flex items-center justify-center gap-3">
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://github.com/shiarauzo" className="text-white/60 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+            </a>
+            <a href="https://www.instagram.com/sh.iara221b/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </a> */}
+{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Globe className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </a> */}
+            <a href="https://www.linkedin.com/in/shiara-arauzo/" className="text-white/60 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
@@ -339,16 +342,19 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Melissa Huerta</h3>
           <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
           <div className="flex items-center justify-center gap-3">
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://github.com/melissahuertadev" className="text-white/60 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+            </a>
+            <a href="https://www.instagram.com/melissahuerta.dev/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </a> */}
+            <a href="https://melissahuerta.dev" className="text-white/60 hover:text-white transition-colors">
               <Globe className="w-5 h-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/melissahuertadev/" className="text-white/60 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
@@ -366,16 +372,21 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Malu Munayco</h3>
           <p className="text-purple-400 text-sm mb-4">Game Developer</p>
           <div className="flex items-center justify-center gap-3">
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://github.com/malumunayco" className="text-white/60 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+            </a>
+
+
+            <a href="https://www.instagram.com/malumunayco/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Globe className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </a> */}
+            <a href="https://www.linkedin.com/in/maría-luisa-munayco-988042392/" className="text-white/60 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
@@ -393,16 +404,16 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Ariadna Mestanza</h3>
           <p className="text-purple-400 text-sm mb-4">Artist</p>
           <div className="flex items-center justify-center gap-3">
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://www.instagram.com/yellow_fx/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Globe className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </a> */}
+            <a href="https://www.linkedin.com/in/ariadna-mestanza-385866359/" className="text-white/60 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
@@ -420,16 +431,16 @@ export default function Home() {
           <h3 className="text-xl font-bold text-white mb-1">Selene Negrón</h3>
           <p className="text-purple-400 text-sm mb-4">Artist</p>
           <div className="flex items-center justify-center gap-3">
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <a href="https://www.instagram.com/yubae_2mu/" className="text-white/60 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               <Globe className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </a> */}
+            <a href="https://www.linkedin.com/in/selene-negrón-alanoca-082495390/" className="text-white/60 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
@@ -482,13 +493,13 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-6">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/theglitchgirls/" className="text-white/60 hover:text-white transition-colors">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/109253587/admin/dashboard/" className="text-white/60 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="https://github.com/The-glitch-girls" className="text-white/60 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </a>
             </div>
