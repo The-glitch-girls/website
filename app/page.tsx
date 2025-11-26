@@ -1,12 +1,14 @@
 "use client"
 
 import gamesData from "./data/games.json";
+import teamMembersData from "./data/teamMembers.json";
 
 import { Instagram, Linkedin, Github, Twitter, Globe, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import GameCard from "@/components/GameCard"
+import TeamMemberCard from "@/components/TeamMemberCard"
 
 import { useState } from "react"
 
@@ -249,168 +251,35 @@ export default function Home() {
       )}
 
      {activeSection === "team" && (
-  <section className="min-h-screen bg-black py-32">
-    <div className="container mx-auto px-6">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Our Team</h2>
-        <p className="text-lg text-white/60 max-w-2xl mx-auto">
-          Meet the talented individuals behind The Glitch Girls who bring our games to life
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-        {/* Team Member 1 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/shiara-arauzo.jpeg"
-              alt="Shiara Arauzo"
-              className="w-full h-full object-cover"
-            />
+      <section className="min-h-screen bg-black py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Our Team</h2>
+            <p className="text-lg text-white/60 max-w-2xl mx-auto">
+              Meet the talented individuals behind The Glitch Girls who bring our games to life
+            </p>
           </div>
-          <h3 className="text-xl font-bold text-white mb-1">Shiara Arauzo</h3>
-          <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/shiarauzo" className="text-white/60 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/sh.iara221b/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a> */}
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/shiara-arauzo/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">            
+            {/* TeamMember cards section */}
+            {teamMembersData.map((member, index) => (
+                <TeamMemberCard
+                  key={index}
+                  name={member.name}
+                  role={member.role}
+                  imageUrl={member.imageUrl}
+                  socials={{
+                    github: member.githubLink,
+                    instagram: member.instagramLink,
+                    website: member.portfolioLink,
+                    linkedin: member.linkedinLink
+                  }}
+                />
+              ))}
           </div>
         </div>
-
-        {/* Team Member 2 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/melissa-huerta.jpg"
-              alt="Melissa Huerta"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Melissa Huerta</h3>
-          <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/melissahuertadev" className="text-white/60 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/melissahuerta.dev/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a> */}
-            <a href="https://melissahuerta.dev" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/melissahuertadev/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-        {/* Team Member 3 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/malu-munayco.jpeg"
-              alt="Malu Munayco"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Malu Munayco</h3>
-          <p className="text-purple-400 text-sm mb-4">Game Developer</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/malumunayco" className="text-white/60 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-            </a>
-
-
-            <a href="https://www.instagram.com/malumunayco/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/maría-luisa-munayco-988042392/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-               {/* Team Member 4 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/ariadna-mestanza.jpg"
-              alt="Ariadna Mestanza"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Ariadna Mestanza</h3>
-          <p className="text-purple-400 text-sm mb-4">Artist</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://www.instagram.com/yellow_fx/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/ariadna-mestanza-385866359/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-               {/* Team Member 4 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/selene-negron.jpeg"
-              alt="Selene Negrón"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Selene Negrón</h3>
-          <p className="text-purple-400 text-sm mb-4">Artist</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://www.instagram.com/yubae_2mu/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/selene-negrón-alanoca-082495390/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-)}
-
-
+      </section>
+    )}
 
       {activeSection === "contact" && (
         <section className="min-h-screen bg-black py-32">
