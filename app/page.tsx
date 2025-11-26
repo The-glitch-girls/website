@@ -23,7 +23,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-purple-300 to-green-300 rounded-lg" />
               <div className="flex flex-col">
-                <span className="text-white font-bold text-lg leading-none">The Glitch Girls</span>
+                <span className="text-white font-bold text-lg leading-none rubik-glitch-regular">The Glitch Girls</span>
                 <span className="text-white/60 text-xs">indie videogame studio</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function Home() {
   <section className="min-h-screen flex flex-col justify-between bg-black text-center">
     {/* Hero title */}
     <div className="flex-1 flex flex-col items-center justify-center px-6 mt-16">
-      <h1 className="text-7xl md:text-8xl font-bold text-white mb-6 leading-tight">
+      <h1 className="text-7xl md:text-8xl font-bold text-white mb-6 leading-tight rubik-glitch-regular">
         The Glitch Girls
       </h1>
       <p className="text-2xl text-white/70 max-w-2xl mx-auto">
@@ -458,14 +458,14 @@ export default function Home() {
               <a href="https://www.linkedin.com/company/109253587/admin/dashboard/" className="text-white/60 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com/The-glitch-girls" className="text-white/60 hover:text-white transition-colors">
+                <a href="https://github.com/The-glitch-girls" className="text-white/60 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
-              </a>
+                </a>
+              </div>
+              <p className="text-white/40 text-sm">© {new Date().getFullYear()} The Glitch Girls. Todos los derechos reservados.</p>
+              </div>
             </div>
-            <p className="text-white/40 text-sm">© 2025 The Glitch Girls. Todos los derechos reservados.</p>
+            </footer>
           </div>
-        </div>
-      </footer>
-    </div>
-  )
-}
+          )
+        }
