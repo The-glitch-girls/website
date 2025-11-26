@@ -9,12 +9,16 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import GameCard from "@/components/GameCard"
 import TeamMemberCard from "@/components/TeamMemberCard"
+import FilterTab from "@/components/FilterTab"
 
 import { useState } from "react"
+import type { FilterType } from "@/types/filters";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<"home" | "games" | "team" | "contact">("home")
-  const [activeFilter, setActiveFilter] = useState<"released" | "coming">("released")
+  const [activeFilter, setActiveFilter] = useState<FilterType>("released");
+
+ // #const [activeFilter, setActiveFilter] = useState<"released" | "coming">("released")
 
   return (
     <div className="min-h-screen bg-black">
@@ -111,144 +115,129 @@ export default function Home() {
 )}
 
 
-      {activeSection === "games" && (
-        <section className="min-h-screen py-32">
-          <div className="container mx-auto px-6">
-           <div className="text-center mb-16">
-  <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
-    Games We Made
-  </h3>
-  <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
-    Explore our collection of immersive gaming experiences that push the
-    boundaries of reality and imagination
-  </p>
+  {activeSection === "games" && (
+    <section className="min-h-screen py-32">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            Games We Made
+          </h3>
+          <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
+            Explore our collection of immersive gaming experiences that push the
+            boundaries of reality and imagination
+          </p>
 
-  {/* Tabs accesibles */}
-  <div
-    role="tablist"
-    aria-label="Game categories"
-    className="inline-flex border-b border-white/40"
-  >
-    <button
-      role="tab"
-      aria-selected={activeFilter === "released"}
-      tabIndex={activeFilter === "released" ? 0 : -1}
-      onClick={() => setActiveFilter("released")}
-      className={`px-6 py-3 text-lg font-semibold uppercase tracking-wide transition-all ${
-        activeFilter === "released"
-          ? "text-white border-b-2 border-white"
-          : "text-white/60 hover:text-white"
-      }`}
-    >
-      Released
-    </button>
-    <button
-      role="tab"
-      aria-selected={activeFilter === "coming"}
-      tabIndex={activeFilter === "coming" ? 0 : -1}
-      onClick={() => setActiveFilter("coming")}
-      className={`px-6 py-3 text-lg font-semibold uppercase tracking-wide transition-all ${
-        activeFilter === "coming"
-          ? "text-white border-b-2 border-white"
-          : "text-white/60 hover:text-white"
-      }`}
-    >
-      Coming Soon
-    </button>
-  </div>
-</div>
+          {/* Tabs accesibles */}
+          <div
+            role="tablist"
+            aria-label="Game categories"
+            className="inline-flex border-b border-white/40"
+          >
+            <FilterTab
+              label="Released"
+              value="released"
+              activeFilter={activeFilter}
+              setActiveFilter={setActiveFilter}
+            />
 
-{activeFilter === "released" ? (
-  <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
-    {/* Large Card */}
-    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-      <div className="aspect-[4/3] relative">
-        <img src="/games/game-1.png" alt="Neon Pulse" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t " />
-      </div>
-      <div className="p-5">
-        <h3 className="text-white font-bold text-2xl mb-1">Cupid: Encuentra a tu pareja ideal</h3>
-        <p className="text-white/70 text-sm mb-4">Narrative videogame</p>
-        <div className="flex gap-3">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-        </div>
-      </div>
-    </div>
-
-    {/* Medium Card */}
-    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-      <div className="aspect-[4/3] relative">
-        <img src="/games/game-2.png" alt="Digital Dreams" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t " />
-      </div>
-      <div className="p-5">
-        <h3 className="text-white font-bold text-2xl mb-1">Sir Isaac Pastry</h3>
-        <p className="text-white/70 text-sm mb-4">Puzzle Platformer</p>
-        <div className="flex gap-3">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-        </div>
-      </div>
-    </div>
-
-    {/* Small Card */}
-    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-      <div className="aspect-[4/3] relative">
-        <img src="/games/game-3.jpg" alt="Glitch Runner" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t " />
-      </div>
-      <div className="p-5">
-        <h3 className="text-white font-bold text-2xl mb-1">Echoes of the amazon</h3>
-        <p className="text-white/70 text-sm mb-4">Top down game</p>
-        <div className="flex gap-3">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-        </div>
-      </div>
-    </div>
-  </div>
-) : (
-  // COMING SOON - mismo layout
-<div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300 w-[320px] h-[400px]">
-  <div className="relative w-full h-[300px]"> {/* ✅ altura fija */}
-    <img
-      src="/games/game-3.jpg"
-      alt="W.A.V.E.S"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-purple-400/60 via-purple-200/30 to-transparent" />
-  </div>
-
-  <div className="p-5">
-    <h3 className="text-white font-bold text-2xl mb-1">W.A.V.E.S</h3>
-    <p className="text-white/70 text-sm mb-4">Endless Runner</p>
-    <div className="flex gap-3">
-      <a
-        href="https://github.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white/70 hover:text-white"
-      >
-        <i className="fa-brands fa-github text-xl" />
-      </a>
-      <a
-        href="https://example.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white/70 hover:text-white"
-      >
-        <i className="fa-solid fa-globe text-xl" />
-      </a>
-    </div>
-  </div>
-</div>
-)}
-
-
+            <FilterTab
+              label="Coming Soon"
+              value="coming"
+              activeFilter={activeFilter}
+              setActiveFilter={setActiveFilter}
+            />
           </div>
-        </section>
-      )}
+        </div>
+
+        {activeFilter === "released" ? (
+          <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
+            {/* Large Card */}
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <div className="aspect-[4/3] relative">
+                <img src="/games/game-1.png" alt="Neon Pulse" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t " />
+              </div>
+              <div className="p-5">
+                <h3 className="text-white font-bold text-2xl mb-1">Cupid: Encuentra a tu pareja ideal</h3>
+                <p className="text-white/70 text-sm mb-4">Narrative videogame</p>
+                <div className="flex gap-3">
+                  <a href="https://github.com/" target="_blank" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
+                </div>
+              </div>
+            </div>
+
+            {/* Medium Card */}
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <div className="aspect-[4/3] relative">
+                <img src="/games/game-2.png" alt="Digital Dreams" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t " />
+              </div>
+              <div className="p-5">
+                <h3 className="text-white font-bold text-2xl mb-1">Sir Isaac Pastry</h3>
+                <p className="text-white/70 text-sm mb-4">Puzzle Platformer</p>
+                <div className="flex gap-3">
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
+                </div>
+              </div>
+            </div>
+
+            {/* Small Card */}
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <div className="aspect-[4/3] relative">
+                <img src="/games/game-3.jpg" alt="Glitch Runner" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t " />
+              </div>
+              <div className="p-5">
+                <h3 className="text-white font-bold text-2xl mb-1">Echoes of the amazon</h3>
+                <p className="text-white/70 text-sm mb-4">Top down game</p>
+                <div className="flex gap-3">
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
+                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          // COMING SOON - mismo layout
+          <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300 w-[320px] h-[400px]">
+            <div className="relative w-full h-[300px]"> {/* ✅ altura fija */}
+              <img
+                src="/games/game-3.jpg"
+                alt="W.A.V.E.S"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-400/60 via-purple-200/30 to-transparent" />
+            </div>
+
+            <div className="p-5">
+              <h3 className="text-white font-bold text-2xl mb-1">W.A.V.E.S</h3>
+              <p className="text-white/70 text-sm mb-4">Endless Runner</p>
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white"
+                >
+                  <i className="fa-brands fa-github text-xl" />
+                </a>
+                <a
+                  href="https://example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white"
+                >
+                  <i className="fa-solid fa-globe text-xl" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
 
      {activeSection === "team" && (
       <section className="min-h-screen bg-black py-32">

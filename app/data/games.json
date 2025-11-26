@@ -4,20 +4,31 @@
     "type": "Narrative videogame",
     "imageUrl": "/games/game-1.png",
     "link": "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal",
-    "rotateClass": "card-rotate--left"
+    "rotateClass": "card-rotate--left",
+    "status": "released"
   },
   {
     "title": "Sir Isaac's Pastry & Apples",
     "type": "Puzzle Platformer",
     "imageUrl": "/games/game-2.png",
     "link": "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples",
-    "rotateClass": "card-rotate--center"
+    "rotateClass": "card-rotate--center",
+    "status": "released"
   },
   {
     "title": "Echoes of the Amazon",
     "type": "Videogame",
     "imageUrl": "/games/game-3.jpg",
     "link": "https://piratelicorne.itch.io/echoes-of-the-amazon",
-    "rotateClass": "card-rotate--right"
+    "rotateClass": "card-rotate--right",
+    "status": "released"
+  },
+  {
+    "title": "W.A.V.E.S",
+    "type": "Endless Runner",
+    "imageUrl": "/games/game-3.jpg",
+    "github": "https://github.com",
+    "link": "https://example.com",
+    "status": "coming"
   }
 ]
