@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Shiara Arauzo",
+        "role": "Technical Designer & Game Developer",
+        "imageUrl": "/team-photo/shiara-arauzo.jpeg",
+        "portfolioLink": "",
+        "githubLink": "https://github.com/shiarauzo",
+        "linkedinLink": "https://www.linkedin.com/in/shiara-arauzo/",
+        "instagramLink": "https://www.instagram.com/sh.iara221b/",
+        "twitterLink": ""
+    },
+    {
+        "name": "Melissa Huerta",
+        "role": "Technical Designer & Game Developer",
+        "imageUrl": "/team-photo/melissa-huerta.jpg",
+        "portfolioLink": "https://melissahuerta.dev",
+        "githubLink": "https://github.com/melissahuertadev",
+        "linkedinLink": "https://www.linkedin.com/in/melissahuertadev/",
+        "instagramLink": "https://www.instagram.com/melissahuerta.dev/",
+        "twitterLink": ""
+    },
+    {
+        "name": "Malu Munayco",
+        "role": "Game Developer & Content Manager",
+        "imageUrl": "/team-photo/malu-munayco.jpeg",
+        "portfolioLink": "",
+        "githubLink": "https://github.com/malumunayco",
+        "linkedinLink": "https://www.linkedin.com/in/maría-luisa-munayco-988042392/",
+        "instagramLink": "https://www.instagram.com/malumunayco/",
+        "twitterLink": ""
+    },
+        {
+        "name": "Ariadna Mestanza",
+        "role": "Concept Artist & 2D Artist",
+        "imageUrl": "/team-photo/ariadna-mestanza.jpg",
+        "portfolioLink": "",
+        "githubLink": "",
+        "linkedinLink": "https://www.linkedin.com/in/ariadna-mestanza-385866359/",
+        "instagramLink": "https://www.instagram.com/yellow_fx/",
+        "twitterLink": ""
+    },
+        {
+        "name": "Selene Negrón",
+        "role": "Concept Artist & 2D Artist",
+        "imageUrl": "/team-photo/selene-negron.jpeg",
+        "portfolioLink": "",
+        "githubLink": "",
+        "linkedinLink": "https://www.linkedin.com/in/selene-negrón-alanoca-082495390/",
+        "instagramLink": "https://www.instagram.com/yubae_2mu/",
+        "twitterLink": ""
+    }
+]
