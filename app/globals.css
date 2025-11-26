@@ -154,17 +154,31 @@ h1, h2, h3, .title {
   }
 }
 
-/* Rotaciones SOLO en escritorio (a partir de md) */
+/* Rotación según cada card */
+.card-rotate--left {
+  transform: rotate(-3deg);
+}
+
+.card-rotate--center {
+  transform: rotate(0deg);
+}
+
+.card-rotate--right {
+  transform: rotate(3deg);
+}
+
+/* Solo aplicar rotación en md+ */
 @media (min-width: 768px) {
-  .rotate-desktop--3 {
-    transform: rotate(-3deg);
-  }
+  .card-rotate--left { transform: rotate(-3deg); }
+  .card-rotate--center { transform: rotate(0deg); }
+  .card-rotate--right { transform: rotate(3deg); }
+}
 
-  .rotate-desktop-0 {
-    transform: rotate(0deg);
-  }
-
-  .rotate-desktop-3 {
-    transform: rotate(3deg);
+/* En mobile NO rotan */
+@media (max-width: 767px) {
+  .card-rotate--left,
+  .card-rotate--center,
+  .card-rotate--right {
+    transform: none;
   }
 }

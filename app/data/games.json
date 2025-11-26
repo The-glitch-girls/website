@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Cupid: Encuentra a tu pareja ideal",
+    "type": "Narrative videogame",
+    "imageUrl": "/games/game-1.png",
+    "link": "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal",
+    "rotateClass": "card-rotate--left"
+  },
+  {
+    "title": "Sir Isaac's Pastry & Apples",
+    "type": "Puzzle Platformer",
+    "imageUrl": "/games/game-2.png",
+    "link": "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples",
+    "rotateClass": "card-rotate--center"
+  },
+  {
+    "title": "Echoes of the Amazon",
+    "type": "Videogame",
+    "imageUrl": "/games/game-3.jpg",
+    "link": "https://piratelicorne.itch.io/echoes-of-the-amazon",
+    "rotateClass": "card-rotate--right"
+  }
+]

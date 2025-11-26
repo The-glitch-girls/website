@@ -1,5 +1,7 @@
 "use client"
 
+import gamesData from "./data/games.json";
+
 import { Instagram, Linkedin, Github, Twitter, Globe, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -87,33 +89,20 @@ export default function Home() {
 
     {/* Game cards section */}
     <div className="relative bg-gradient-to-t from-black via-black/80 to-transparent pb-16 pt-10">
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-end gap-8 md:gap-12 max-w-7xl mx-auto px-6 game-cards-container">
-        {/* Game Card 1 */}
-        <GameCard
-          title="Cupid: Encuentra a tu pareja ideal"
-          type="Narrative videogame"
-          imageUrl="/games/game-1.png"
-          link="https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal"
-          rotate="-3"
-        />
-
-        {/* Game Card 2 */}
-        <GameCard
-          title="Sir Isaac's Pastry & Apples"
-          type="Puzzle Platformer"
-          imageUrl="/games/game-2.png"
-          link="https://shiara0312.itch.io/sir-isaacs-pastry-and-apples"
-          rotate="0"
-        />
-
-        {/* Game Card 3 */}
-        <GameCard
-            title="Echoes of the Amazon"
-            type="Videogame"
-            imageUrl="/games/game-3.jpg"
-            link="https://piratelicorne.itch.io/echoes-of-the-amazon"
-            rotate="3"
-          />
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 
+                w-full place-items-center justify-center">
+          {gamesData.slice(0, 3).map((game, index) => (
+            <GameCard
+              key={index}
+              title={game.title}
+              type={game.type}
+              imageUrl={game.imageUrl}
+              link={game.link}
+              rotateClass={game.rotateClass}
+            />
+          ))}
+        </div>
       </div>
     </div>
   </section>

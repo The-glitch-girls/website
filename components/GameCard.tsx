@@ -5,17 +5,23 @@ interface GameCardProps {
   type: string;
   imageUrl: string;
   link: string;
-  rotate?: "-3" | "0" | "3";
+  rotateClass?: string;
 }
 
-export default function GameCard({ title, type, imageUrl, link, rotate = "0" }: GameCardProps) {
+export default function GameCard({ title, type, imageUrl, link, rotateClass }: GameCardProps) {
     return (
         <div onClick={() => (window.location.href = link)}
-        className={`game-card relative w-[85vw] max-w-[350px] h-[380px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03] rotate-0
-        ${rotate === "-3" ? "rotate-desktop--3" : ""}
-        ${rotate === "0" ? "rotate-desktop-0" : ""}
-        ${rotate === "3" ? "rotate-desktop-3" : ""}`}
-        >
+        className={`
+            relative
+            w-[90vw] h-[65vw]              /* mobile: grande y proporcional */
+            max-w-[420px]                  /* que no se pase de ancho */
+            sm:w-[300px] sm:h-[400px]      /* tablets */
+            md:w-[260px] md:h-[360px]      /* md: compactos para 3 columnas */
+            lg:w-[320px] lg:h-[460px]      /* desktop */
+            rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer
+            transition-transform duration-300 hover:-translate-y-3 hover:scale-[1.03]
+            ${rotateClass}
+        `}>
             <img src={imageUrl} alt={title} className="w-full h-full object-cover"/>
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
