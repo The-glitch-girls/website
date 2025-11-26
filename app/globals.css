@@ -137,3 +137,34 @@ h1, h2, h3, .title {
   color: white;
   text-shadow: 1px 1px magenta, -1px -1px cyan;
 }
+
+
+@media (max-width: 768px) {
+  .game-cards-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .game-card {
+    min-width: 80%;
+    scroll-snap-align: center;
+  }
+}
+
+/* Rotaciones SOLO en escritorio (a partir de md) */
+@media (min-width: 768px) {
+  .rotate-desktop--3 {
+    transform: rotate(-3deg);
+  }
+
+  .rotate-desktop-0 {
+    transform: rotate(0deg);
+  }
+
+  .rotate-desktop-3 {
+    transform: rotate(3deg);
+  }
+}

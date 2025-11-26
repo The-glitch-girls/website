@@ -4,6 +4,8 @@ import { Instagram, Linkedin, Github, Twitter, Globe, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import GameCard from "@/components/GameCard"
+
 import { useState } from "react"
 
 export default function Home() {
@@ -85,65 +87,33 @@ export default function Home() {
 
     {/* Game cards section */}
     <div className="relative bg-gradient-to-t from-black via-black/80 to-transparent pb-16 pt-10">
-      <div className="flex justify-center items-end gap-12 max-w-7xl mx-auto px-6">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-end gap-8 md:gap-12 max-w-7xl mx-auto px-6 game-cards-container">
         {/* Game Card 1 */}
-        <div
-          onClick={() => window.location.href = "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal"}
-          className="relative w-[340px] h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
-          style={{ transform: "rotate(-3deg)" }}
-        >
-          <img
-            src="/games/game-1.png"
-            alt="Cupid: Encuentra a tu pareja ideal"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0 px-8">
-            <h3 className="text-white font-bold text-3xl mb-2">
-              Cupid: Encuentra a tu pareja ideal
-            </h3>
-            <p className="text-white/80 text-base">Narrative videogame</p>
-          </div>
-        </div>
+        <GameCard
+          title="Cupid: Encuentra a tu pareja ideal"
+          type="Narrative videogame"
+          imageUrl="/games/game-1.png"
+          link="https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal"
+          rotate="-3"
+        />
 
         {/* Game Card 2 */}
-        <div
-          onClick={() => window.location.href = "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples"}
-          className="relative w-[380px] h-[540px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
-        >
-          <img
-            src="/games/game-2.png"
-            alt="Sir Isaac's Pastry & Apples"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0 px-8">
-            <h3 className="text-white font-bold text-3xl mb-2">
-              Sir Isaac's Pastry & Apples
-            </h3>
-            <p className="text-white/80 text-base">Puzzle Platformer</p>
-          </div>
-        </div>
+        <GameCard
+          title="Sir Isaac's Pastry & Apples"
+          type="Puzzle Platformer"
+          imageUrl="/games/game-2.png"
+          link="https://shiara0312.itch.io/sir-isaacs-pastry-and-apples"
+          rotate="0"
+        />
 
         {/* Game Card 3 */}
-        <div
-          onClick={() => window.location.href = "https://piratelicorne.itch.io/echoes-of-the-amazon"}
-          className="relative w-[340px] h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
-          style={{ transform: "rotate(3deg)" }}
-        >
-          <img
-            src="/games/game-3.jpg"
-            alt="Echoes of the Amazon"
-            className="w-full h-full object-cover"
+        <GameCard
+            title="Echoes of the Amazon"
+            type="Videogame"
+            imageUrl="/games/game-3.jpg"
+            link="https://piratelicorne.itch.io/echoes-of-the-amazon"
+            rotate="3"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0 px-8">
-            <h3 className="text-white font-bold text-3xl mb-2">
-              Echoes of the Amazon
-            </h3>
-            <p className="text-white/80 text-base">Videogame</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
