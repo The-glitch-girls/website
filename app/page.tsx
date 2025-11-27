@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import HeroCard from "@/components/HeroCard"
+import GameCard from "@/components/GameCard"
 import TeamMemberCard from "@/components/TeamMemberCard"
 import FilterTab from "@/components/FilterTab"
 
@@ -104,7 +105,7 @@ export default function Home() {
               title={game.title}
               type={game.type}
               imageUrl={game.imageUrl}
-              link={game.link}
+              link={game.playLink}
               rotateClass={game.rotateClass}
             />
           ))}
@@ -151,53 +152,17 @@ export default function Home() {
 
         {activeFilter === "released" ? (
           <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
-            {/* Large Card */}
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-              <div className="aspect-[4/3] relative">
-                <img src="/games/game-1.png" alt="Neon Pulse" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t " />
-              </div>
-              <div className="p-5">
-                <h3 className="text-white font-bold text-2xl mb-1">Cupid: Encuentra a tu pareja ideal</h3>
-                <p className="text-white/70 text-sm mb-4">Narrative videogame</p>
-                <div className="flex gap-3">
-                  <a href="https://github.com/" target="_blank" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-                </div>
-              </div>
-            </div>
-
-            {/* Medium Card */}
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-              <div className="aspect-[4/3] relative">
-                <img src="/games/game-2.png" alt="Digital Dreams" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t " />
-              </div>
-              <div className="p-5">
-                <h3 className="text-white font-bold text-2xl mb-1">Sir Isaac Pastry</h3>
-                <p className="text-white/70 text-sm mb-4">Puzzle Platformer</p>
-                <div className="flex gap-3">
-                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-                </div>
-              </div>
-            </div>
-
-            {/* Small Card */}
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-              <div className="aspect-[4/3] relative">
-                <img src="/games/game-3.jpg" alt="Glitch Runner" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t " />
-              </div>
-              <div className="p-5">
-                <h3 className="text-white font-bold text-2xl mb-1">Echoes of the amazon</h3>
-                <p className="text-white/70 text-sm mb-4">Top down game</p>
-                <div className="flex gap-3">
-                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-                  <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-                </div>
-              </div>
-            </div>
+            {gamesData.filter(game => game.status === "released").map((game, index) => (
+              <GameCard
+                key={index}
+                title={game.title}
+                description={game.type}
+                imageUrl={game.imageUrl}
+                repoLink={game.repoLink}
+                playLink={game.playLink}
+                isReleased={true}
+              />
+            ))}
           </div>
         ) : (
           // COMING SOON - mismo layout

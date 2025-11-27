@@ -3,7 +3,8 @@
     "title": "Cupid: Encuentra a tu pareja ideal",
     "type": "Narrative videogame",
     "imageUrl": "/games/game-1.png",
-    "link": "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal",
+    "playLink": "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal",
+    "repoLink": "",
     "rotateClass": "card-rotate--left",
     "status": "released"
   },
@@ -11,7 +12,8 @@
     "title": "Sir Isaac's Pastry & Apples",
     "type": "Puzzle Platformer",
     "imageUrl": "/games/game-2.png",
-    "link": "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples",
+    "playLink": "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples",
+    "repoLink": "",
     "rotateClass": "card-rotate--center",
     "status": "released"
   },
@@ -19,7 +21,8 @@
     "title": "Echoes of the Amazon",
     "type": "Videogame",
     "imageUrl": "/games/game-3.jpg",
-    "link": "https://piratelicorne.itch.io/echoes-of-the-amazon",
+    "playLink": "https://piratelicorne.itch.io/echoes-of-the-amazon",
+    "repoLink": "",
     "rotateClass": "card-rotate--right",
     "status": "released"
   },
@@ -27,8 +30,8 @@
     "title": "W.A.V.E.S",
     "type": "Endless Runner",
     "imageUrl": "/games/game-3.jpg",
-    "github": "https://github.com",
-    "link": "https://example.com",
+    "playLink": "https://example.com",
+    "repoLink": "",
     "status": "coming"
   }
 ]

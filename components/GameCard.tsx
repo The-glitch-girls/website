@@ -1,35 +1,38 @@
 "use client";
 
+import { Github, Globe } from "lucide-react"
+
 interface GameCardProps {
-  title: string;
-  type: string;
-  imageUrl: string;
-  link: string;
-  rotateClass?: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    repoLink: string;
+    playLink: string;
+    rotateClass?: string;
+    isReleased?: boolean;
 }
 
-export default function GameCard({ title, type, imageUrl, link, rotateClass }: GameCardProps) {
+export default function GameCard({ title, description, imageUrl, repoLink, playLink, isReleased }: GameCardProps) {
     return (
-        <div onClick={() => (window.location.href = link)}
-        className={`
-            relative
-            w-[90vw] h-[65vw]              /* mobile: grande y proporcional */
-            max-w-[420px]                  /* que no se pase de ancho */
-            sm:w-[300px] sm:h-[400px]      /* tablets */
-            md:w-[260px] md:h-[360px]      /* md: compactos para 3 columnas */
-            lg:w-[320px] lg:h-[460px]      /* desktop */
-            rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer
-            transition-transform duration-300 hover:-translate-y-3 hover:scale-[1.03]
-            ${rotateClass}
-        `}>
-            <img src={imageUrl} alt={title} className="w-full h-full object-cover"/>
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          
-            <div className="absolute bottom-8 left-0 right-0 px-8">
-                <h3 className="text-white font-bold text-3xl mb-2">{title}</h3>
-            <p className="text-white/80 text-base">{type}</p>
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+            <div className="aspect-[4/3] relative">
+                <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t " />
+            </div>
+            <div className="p-5">
+                <h3 className="text-white font-bold text-2xl mb-1">{title}</h3>
+                <p className="text-white/70 text-sm mb-4">{description}</p>
+                <div className="flex gap-3">
+                    <a href={playLink} target="_blank" className="text-white/60 hover:text-white transition-colors">
+                        <Globe className="w-6 h-6" />
+                    </a>
+                    {isReleased && (
+                        <a href={repoLink} target="_blank" className="text-white/60 hover:text-white transition-colors">
+                            <Github className="w-6 h-6" />
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );
-  }
+}
