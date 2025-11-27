@@ -156,7 +156,7 @@ export default function Home() {
               <GameCard
                 key={index}
                 title={game.title}
-                description={game.type}
+                description={game.description}
                 imageUrl={game.imageUrl}
                 repoLink={game.repoLink}
                 playLink={game.playLink}
@@ -171,7 +171,7 @@ export default function Home() {
               <GameCard
                 key={index}
                 title={game.title}
-                description={game.type}
+                description={game.description}
                 imageUrl={game.imageUrl}
                 repoLink={game.repoLink}
                 isReleased={false}
