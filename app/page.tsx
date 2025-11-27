@@ -7,7 +7,7 @@ import { Instagram, Linkedin, Github, Twitter, Globe, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import GameCard from "@/components/GameCard"
+import HeroCard from "@/components/HeroCard"
 import TeamMemberCard from "@/components/TeamMemberCard"
 import FilterTab from "@/components/FilterTab"
 
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 
                 w-full place-items-center justify-center">
           {gamesData.slice(0, 3).map((game, index) => (
-            <GameCard
+            <HeroCard
               key={index}
               title={game.title}
               type={game.type}
