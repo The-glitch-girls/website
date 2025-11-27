@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Cupid: Encuentra a tu pareja ideal",
+    "type": "Visual Novel / Thriller Narrativo",
+    "description": "Te pones en los zapatos de un hombre mayor que, tras coincidir con alguien en una app de citas, descubre que la persona no es quien dice ser. Tu misión: desenmascarar la verdad detrás de cada perfil.",
+    "imageUrl": "/games/game-1.png",
+    "playLink": "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal",
+    "repoLink": "https://github.com/melissahuertadev/wgj2025-cupid",
+    "rotateClass": "card-rotate--left",
+    "status": "released"
+  },
+  {
+    "title": "Sir Isaac's Pastry & Apples",
+    "type": "Puzzle / Mini-juegos con cocción y humor histórico",
+    "description": "Eres Isaac Newton en una vida alternativa donde cocinas recetas con ingredientes falsos, cambias el humor de personajes históricos y participas en desafíos de cocina y captura de personajes. Disponible en español, inglés y francés.",
+    "imageUrl": "/games/game-2.png",
+    "playLink": "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples",
+    "repoLink": "https://github.com/shiarauzo/SandaGameJam2025",
+    "rotateClass": "card-rotate--center",
+    "status": "released"
+  },
+  {
+    "title": "Echoes of the Amazon",
+    "type": "Aventura ecológica / Acción-aventura",
+    "description": "Guiado por el espíritu guardián de la selva, debes llevar agua para apagar incendios, rescatar animales y restaurar el equilibrio de la Amazonía. Cada vida salvada despierta la selva.",
+    "imageUrl": "/games/game-3.jpg",
+    "playLink": "https://piratelicorne.itch.io/echoes-of-the-amazon",
+    "repoLink": "https://github.com/shiarauzo/LatinxGaming2025",
+    "rotateClass": "card-rotate--right",
+    "status": "released"
+  },
+  {
+    "title": "W.A.V.E.S",
+    "type": "Minimalist Pulse / Wave Reaction Game",
+    "description": "Un juego minimalista donde un punto aparece de forma aleatoria en la pantalla y genera una onda expansiva. El jugador debe reaccionar a tiempo para interactuar con la onda, manteniendo el ritmo y precisión mientras las apariciones se vuelven más rápidas e impredecibles.",
+    "imageUrl": "/games/game-3.jpg",
+    "playLink": "",
+    "repoLink": "https://github.com/The-glitch-girls/game-off-2025",
+    "status": "coming"
+  }
+]

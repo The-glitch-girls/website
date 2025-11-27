@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -136,4 +137,54 @@ h1, h2, h3, .title {
   position: relative;
   color: white;
   text-shadow: 1px 1px magenta, -1px -1px cyan;
+}
+
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .game-cards-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .game-card {
+    min-width: 80%;
+    scroll-snap-align: center;
+  }
+}
+
+/* Rotación según cada card */
+.card-rotate--left {
+  transform: rotate(-3deg);
+}
+
+.card-rotate--center {
+  transform: rotate(0deg);
+}
+
+.card-rotate--right {
+  transform: rotate(3deg);
+}
+
+/* Solo aplicar rotación en md+ */
+@media (min-width: 768px) {
+  .card-rotate--left { transform: rotate(-3deg); }
+  .card-rotate--center { transform: rotate(0deg); }
+  .card-rotate--right { transform: rotate(3deg); }
+}
+
+/* En mobile NO rotan */
+@media (max-width: 767px) {
+  .card-rotate--left,
+  .card-rotate--center,
+  .card-rotate--right {
+    transform: none;
+  }
 }

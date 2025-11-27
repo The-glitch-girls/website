@@ -1,457 +1,162 @@
 "use client"
 
+import gamesData from "./data/games.json";
+import teamMembersData from "./data/teamMembers.json";
+
 import { Instagram, Linkedin, Github, Twitter, Globe, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import NavBar, { Section } from "@/components/NavBar";
+import HeroCard from "@/components/HeroCard"
+import GameCard from "@/components/GameCard"
+import TeamMemberCard from "@/components/TeamMemberCard"
+import FilterTab from "@/components/FilterTab"
+
 import { useState } from "react"
+import type { FilterType } from "@/types/filters";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<"home" | "games" | "team" | "contact">("home")
-  const [activeFilter, setActiveFilter] = useState<"released" | "coming">("released")
+  const [activeSection, setActiveSection] = useState<Section>("home");
+  const [activeFilter, setActiveFilter] = useState<FilterType>("released");
 
   return (
     <div className="min-h-screen bg-black">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-300 to-green-300 rounded-lg" />
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-lg leading-none">The Glitch Girls</span>
-                <span className="text-white/60 text-xs">indie videogame studio</span>
+      <NavBar activeSection={activeSection} setActiveSection={setActiveSection} />
+
+      {/* Sections */}
+      {activeSection === "home" && (
+        <section className="min-h-screen flex flex-col justify-between bg-black text-center">
+          {/* Hero title */}
+          <div className="flex-1 flex flex-col items-center justify-center px-6 mt-16">
+            <h1 className="text-7xl md:text-8xl font-bold text-white mb-6 leading-tight rubik-glitch-regular">
+              The Glitch Girls
+            </h1>
+            <p className="text-2xl text-white/70 max-w-2xl mx-auto">
+              indie videogame studio
+            </p>
+          </div>
+
+          {/* Hero Cards section */}
+          <div className="relative bg-gradient-to-t from-black via-black/80 to-transparent pb-16 pt-10">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 
+                      w-full place-items-center justify-center">
+                {gamesData.slice(0, 3).map((game, index) => (
+                  <HeroCard
+                    key={index}
+                    title={game.title}
+                    type={game.type}
+                    imageUrl={game.imageUrl}
+                    link={game.playLink}
+                    rotateClass={game.rotateClass}
+                  />
+                ))}
               </div>
             </div>
-            <ul className="flex items-center gap-8">
-              <li>
-                <button
-                  onClick={() => setActiveSection("home")}
-                  className={`transition-colors ${
-                    activeSection === "home" ? "text-white" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setActiveSection("games")}
-                  className={`transition-colors ${
-                    activeSection === "games" ? "text-white" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  games
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setActiveSection("team")}
-                  className={`transition-colors ${
-                    activeSection === "team" ? "text-white" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  team
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setActiveSection("contact")}
-                  className={`transition-colors ${
-                    activeSection === "contact" ? "text-white" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  contact
-                </button>
-              </li>
-            </ul>
           </div>
-        </div>
-      </nav>
-
-
-
-{activeSection === "home" && (
-  <section className="min-h-screen flex flex-col justify-between bg-black text-center">
-    {/* Hero title */}
-    <div className="flex-1 flex flex-col items-center justify-center px-6 mt-16">
-      <h1 className="text-7xl md:text-8xl font-bold text-white mb-6 leading-tight">
-        The Glitch Girls
-      </h1>
-      <p className="text-2xl text-white/70 max-w-2xl mx-auto">
-        indie videogame studio
-      </p>
-    </div>
-
-    {/* Game cards section */}
-    <div className="relative bg-gradient-to-t from-black via-black/80 to-transparent pb-16 pt-10">
-      <div className="flex justify-center items-end gap-12 max-w-7xl mx-auto px-6">
-        {/* Game Card 1 */}
-        <div
-          onClick={() => window.location.href = "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal"}
-          className="relative w-[340px] h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
-          style={{ transform: "rotate(-3deg)" }}
-        >
-          <img
-            src="/games/game-1.png"
-            alt="Cupid: Encuentra a tu pareja ideal"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0 px-8">
-            <h3 className="text-white font-bold text-3xl mb-2">
-              Cupid: Encuentra a tu pareja ideal
-            </h3>
-            <p className="text-white/80 text-base">Narrative videogame</p>
-          </div>
-        </div>
-
-        {/* Game Card 2 */}
-        <div
-          onClick={() => window.location.href = "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples"}
-          className="relative w-[380px] h-[540px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
-        >
-          <img
-            src="/games/game-2.png"
-            alt="Sir Isaac's Pastry & Apples"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0 px-8">
-            <h3 className="text-white font-bold text-3xl mb-2">
-              Sir Isaac's Pastry & Apples
-            </h3>
-            <p className="text-white/80 text-base">Puzzle Platformer</p>
-          </div>
-        </div>
-
-        {/* Game Card 3 */}
-        <div
-          onClick={() => window.location.href = "https://piratelicorne.itch.io/echoes-of-the-amazon"}
-          className="relative w-[340px] h-[500px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer transition-transform duration-300 hover:-translate-y-6 hover:scale-[1.03]"
-          style={{ transform: "rotate(3deg)" }}
-        >
-          <img
-            src="/games/game-3.jpg"
-            alt="Echoes of the Amazon"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0 px-8">
-            <h3 className="text-white font-bold text-3xl mb-2">
-              Echoes of the Amazon
-            </h3>
-            <p className="text-white/80 text-base">Videogame</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-)}
-
+        </section>
+      )}
 
       {activeSection === "games" && (
         <section className="min-h-screen py-32">
           <div className="container mx-auto px-6">
-           <div className="text-center mb-16">
-  <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
-    Games We Made
-  </h3>
-  <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
-    Explore our collection of immersive gaming experiences that push the
-    boundaries of reality and imagination
-  </p>
+            <div className="text-center mb-16">
+              <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
+                Games We Made
+              </h3>
+              <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
+                Explore our collection of immersive gaming experiences that push the
+                boundaries of reality and imagination
+              </p>
 
-  {/* Tabs accesibles */}
-  <div
-    role="tablist"
-    aria-label="Game categories"
-    className="inline-flex border-b border-white/40"
-  >
-    <button
-      role="tab"
-      aria-selected={activeFilter === "released"}
-      tabIndex={activeFilter === "released" ? 0 : -1}
-      onClick={() => setActiveFilter("released")}
-      className={`px-6 py-3 text-lg font-semibold uppercase tracking-wide transition-all ${
-        activeFilter === "released"
-          ? "text-white border-b-2 border-white"
-          : "text-white/60 hover:text-white"
-      }`}
-    >
-      Released
-    </button>
-    <button
-      role="tab"
-      aria-selected={activeFilter === "coming"}
-      tabIndex={activeFilter === "coming" ? 0 : -1}
-      onClick={() => setActiveFilter("coming")}
-      className={`px-6 py-3 text-lg font-semibold uppercase tracking-wide transition-all ${
-        activeFilter === "coming"
-          ? "text-white border-b-2 border-white"
-          : "text-white/60 hover:text-white"
-      }`}
-    >
-      Coming Soon
-    </button>
-  </div>
-</div>
+              {/* Tabs accesibles */}
+              <div
+                role="tablist"
+                aria-label="Game categories"
+                className="inline-flex border-b border-white/40"
+              >
+                <FilterTab
+                  label="Released"
+                  value="released"
+                  activeFilter={activeFilter}
+                  setActiveFilter={setActiveFilter}
+                />
 
-{activeFilter === "released" ? (
-  <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
-    {/* Large Card */}
-    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-      <div className="aspect-[4/3] relative">
-        <img src="/games/game-1.png" alt="Neon Pulse" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t " />
-      </div>
-      <div className="p-5">
-        <h3 className="text-white font-bold text-2xl mb-1">Cupid: Encuentra a tu pareja ideal</h3>
-        <p className="text-white/70 text-sm mb-4">Narrative videogame</p>
-        <div className="flex gap-3">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-        </div>
-      </div>
-    </div>
+                <FilterTab
+                  label="Coming Soon"
+                  value="coming"
+                  activeFilter={activeFilter}
+                  setActiveFilter={setActiveFilter}
+                />
+              </div>
+            </div>
 
-    {/* Medium Card */}
-    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-      <div className="aspect-[4/3] relative">
-        <img src="/games/game-2.png" alt="Digital Dreams" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t " />
-      </div>
-      <div className="p-5">
-        <h3 className="text-white font-bold text-2xl mb-1">Sir Isaac Pastry</h3>
-        <p className="text-white/70 text-sm mb-4">Puzzle Platformer</p>
-        <div className="flex gap-3">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-        </div>
-      </div>
-    </div>
-
-    {/* Small Card */}
-    <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-      <div className="aspect-[4/3] relative">
-        <img src="/games/game-3.jpg" alt="Glitch Runner" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t " />
-      </div>
-      <div className="p-5">
-        <h3 className="text-white font-bold text-2xl mb-1">Echoes of the amazon</h3>
-        <p className="text-white/70 text-sm mb-4">Top down game</p>
-        <div className="flex gap-3">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-brands fa-github text-xl" /></a>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white"><i className="fa-solid fa-globe text-xl" /></a>
-        </div>
-      </div>
-    </div>
-  </div>
-) : (
-  // COMING SOON - mismo layout
-<div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300 w-[320px] h-[400px]">
-  <div className="relative w-full h-[300px]"> {/* ✅ altura fija */}
-    <img
-      src="/games/game-3.jpg"
-      alt="W.A.V.E.S"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-purple-400/60 via-purple-200/30 to-transparent" />
-  </div>
-
-  <div className="p-5">
-    <h3 className="text-white font-bold text-2xl mb-1">W.A.V.E.S</h3>
-    <p className="text-white/70 text-sm mb-4">Endless Runner</p>
-    <div className="flex gap-3">
-      <a
-        href="https://github.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white/70 hover:text-white"
-      >
-        <i className="fa-brands fa-github text-xl" />
-      </a>
-      <a
-        href="https://example.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white/70 hover:text-white"
-      >
-        <i className="fa-solid fa-globe text-xl" />
-      </a>
-    </div>
-  </div>
-</div>
-)}
-
-
+            {activeFilter === "released" ? (
+              // RELEASED
+              <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
+                {gamesData.filter(game => game.status === "released").map((game, index) => (
+                  <GameCard
+                    key={index}
+                    title={game.title}
+                    description={game.description}
+                    imageUrl={game.imageUrl}
+                    repoLink={game.repoLink}
+                    playLink={game.playLink}
+                    isReleased={true}
+                  />
+                ))}
+              </div>
+            ) : (
+              // COMING SOON
+              <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
+                {gamesData.filter(game => game.status === "coming").map((game, index) => (
+                  <GameCard
+                    key={index}
+                    title={game.title}
+                    description={game.description}
+                    imageUrl={game.imageUrl}
+                    repoLink={game.repoLink}
+                    isReleased={false}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </section>
       )}
 
      {activeSection === "team" && (
-  <section className="min-h-screen bg-black py-32">
-    <div className="container mx-auto px-6">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Our Team</h2>
-        <p className="text-lg text-white/60 max-w-2xl mx-auto">
-          Meet the talented individuals behind The Glitch Girls who bring our games to life
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-        {/* Team Member 1 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/shiara-arauzo.jpeg"
-              alt="Shiara Arauzo"
-              className="w-full h-full object-cover"
-            />
+      <section className="min-h-screen bg-black py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Our Team</h2>
+            <p className="text-lg text-white/60 max-w-2xl mx-auto">
+              Meet the talented individuals behind The Glitch Girls who bring our games to life
+            </p>
           </div>
-          <h3 className="text-xl font-bold text-white mb-1">Shiara Arauzo</h3>
-          <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/shiarauzo" className="text-white/60 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/sh.iara221b/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a> */}
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/shiara-arauzo/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">            
+            {/* TeamMember cards section */}
+            {teamMembersData.map((member, index) => (
+                <TeamMemberCard
+                  key={index}
+                  name={member.name}
+                  role={member.role}
+                  imageUrl={member.imageUrl}
+                  socials={{
+                    github: member.githubLink,
+                    instagram: member.instagramLink,
+                    website: member.portfolioLink,
+                    linkedin: member.linkedinLink
+                  }}
+                />
+              ))}
           </div>
         </div>
-
-        {/* Team Member 2 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/melissa-huerta.jpg"
-              alt="Melissa Huerta"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Melissa Huerta</h3>
-          <p className="text-purple-400 text-sm mb-4">Technical Designer & Game Developer</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/melissahuertadev" className="text-white/60 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com/melissahuerta.dev/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a> */}
-            <a href="https://melissahuerta.dev" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/melissahuertadev/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-        {/* Team Member 3 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/malu-munayco.jpeg"
-              alt="Malu Munayco"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Malu Munayco</h3>
-          <p className="text-purple-400 text-sm mb-4">Game Developer</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/malumunayco" className="text-white/60 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-            </a>
-
-
-            <a href="https://www.instagram.com/malumunayco/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/maría-luisa-munayco-988042392/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-               {/* Team Member 4 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/ariadna-mestanza.jpg"
-              alt="Ariadna Mestanza"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Ariadna Mestanza</h3>
-          <p className="text-purple-400 text-sm mb-4">Artist</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://www.instagram.com/yellow_fx/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/ariadna-mestanza-385866359/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-               {/* Team Member 4 */}
-        <div className="flex flex-col items-center text-center">
-          <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
-            <img
-              src="/team-photo/selene-negron.jpeg"
-              alt="Selene Negrón"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="text-xl font-bold text-white mb-1">Selene Negrón</h3>
-          <p className="text-purple-400 text-sm mb-4">Artist</p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://www.instagram.com/yubae_2mu/" className="text-white/60 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-{/*             <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
-              <Globe className="w-5 h-5" />
-            </a> */}
-            <a href="https://www.linkedin.com/in/selene-negrón-alanoca-082495390/" className="text-white/60 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-)}
-
-
+      </section>
+    )}
 
       {activeSection === "contact" && (
         <section className="min-h-screen bg-black py-32">
@@ -499,14 +204,15 @@ export default function Home() {
               <a href="https://www.linkedin.com/company/109253587/admin/dashboard/" className="text-white/60 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com/The-glitch-girls" className="text-white/60 hover:text-white transition-colors">
+                <a href="https://github.com/The-glitch-girls" className="text-white/60 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
-              </a>
+                </a>
+              </div>
+              <p className="text-white/40 text-sm">© {new Date().getFullYear()} The Glitch Girls. Todos los derechos reservados.</p>
+              </div>
             </div>
-            <p className="text-white/40 text-sm">© 2025 The Glitch Girls. Todos los derechos reservados.</p>
-          </div>
-        </div>
       </footer>
+    
     </div>
   )
 }
