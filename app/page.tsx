@@ -165,39 +165,18 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          // COMING SOON - mismo layout
-          <div className="col-span-12 md:col-span-6 lg:col-span-4 border border-white/30 rounded-none overflow-hidden group hover:-translate-y-2 transition-transform duration-300 w-[320px] h-[400px]">
-            <div className="relative w-full h-[300px]"> {/* ✅ altura fija */}
-              <img
-                src="/games/game-3.jpg"
-                alt="W.A.V.E.S"
-                className="w-full h-full object-cover"
+          // COMING SOON
+          <div className="max-w-6xl mx-auto grid grid-cols-12 gap-6 px-4">
+            {gamesData.filter(game => game.status === "coming").map((game, index) => (
+              <GameCard
+                key={index}
+                title={game.title}
+                description={game.type}
+                imageUrl={game.imageUrl}
+                repoLink={game.repoLink}
+                isReleased={false}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-400/60 via-purple-200/30 to-transparent" />
-            </div>
-
-            <div className="p-5">
-              <h3 className="text-white font-bold text-2xl mb-1">W.A.V.E.S</h3>
-              <p className="text-white/70 text-sm mb-4">Endless Runner</p>
-              <div className="flex gap-3">
-                <a
-                  href="https://github.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-white"
-                >
-                  <i className="fa-brands fa-github text-xl" />
-                </a>
-                <a
-                  href="https://example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-white"
-                >
-                  <i className="fa-solid fa-globe text-xl" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         )}
       </div>

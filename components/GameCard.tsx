@@ -7,7 +7,7 @@ interface GameCardProps {
     description: string;
     imageUrl: string;
     repoLink: string;
-    playLink: string;
+    playLink?: string;
     rotateClass?: string;
     isReleased?: boolean;
 }

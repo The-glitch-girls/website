@@ -4,7 +4,7 @@
     "type": "Narrative videogame",
     "imageUrl": "/games/game-1.png",
     "playLink": "https://shiara0312.itch.io/cupid-encuentra-a-tu-pareja-ideal",
-    "repoLink": "",
+    "repoLink": "https://github.com/melissahuertadev/wgj2025-cupid",
     "rotateClass": "card-rotate--left",
     "status": "released"
   },
@@ -13,7 +13,7 @@
     "type": "Puzzle Platformer",
     "imageUrl": "/games/game-2.png",
     "playLink": "https://shiara0312.itch.io/sir-isaacs-pastry-and-apples",
-    "repoLink": "",
+    "repoLink": "https://github.com/shiarauzo/SandaGameJam2025",
     "rotateClass": "card-rotate--center",
     "status": "released"
   },
@@ -22,7 +22,7 @@
     "type": "Videogame",
     "imageUrl": "/games/game-3.jpg",
     "playLink": "https://piratelicorne.itch.io/echoes-of-the-amazon",
-    "repoLink": "",
+    "repoLink": "https://github.com/shiarauzo/LatinxGaming2025",
     "rotateClass": "card-rotate--right",
     "status": "released"
   },
