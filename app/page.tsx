@@ -48,7 +48,7 @@ export default function Home() {
                     key={index}
                     title={game.title}
                     type={game.type}
-                    imageUrl={game.imageUrl}
+                    imageUrl={game.heroUrl ? game.heroUrl : game.imageUrl}
                     link={game.playLink}
                     rotateClass={game.rotateClass}
                   />
