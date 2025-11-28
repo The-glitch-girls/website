@@ -11,27 +11,28 @@ export default function ContactSection() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
+    const [statusType, setStatusType] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatusType("loading");
     setStatus("Enviando...");
+
+    const formData = new FormData(e.currentTarget);
 
     const res = await fetch("/api/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        message,
-        token: "glitchgirls-human",
-      }),
+      body: formData,
     });
 
     if (res.ok) {
-      setStatus("Mensaje enviado con éxito");
-      setEmail("");
-      setMessage("");
+        setStatusType("success");
+        setStatus("Mensaje enviado con éxito");
+        setEmail("");
+        setMessage("");
     } else {
-      setStatus("Error al enviar");
+        setStatusType("error");
+        setStatus("Error al enviar");
     }
   };
 
@@ -48,10 +49,16 @@ export default function ContactSection() {
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* honeypot anti bots */}
-                        <input type="text" name="website" style={{ display: "none" }} />
+                        <input
+                            type="text"
+                            name="website"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            className="hidden" />
 
                         <div>
                             <Input
+                                name="email"
                                 type="email"
                                 placeholder="Tu correo electrónico"
                                 className="bg-white/5 border-white/10 text-white placeholder:text-white/40 h-12"
@@ -63,6 +70,7 @@ export default function ContactSection() {
 
                         <div>
                             <Textarea
+                                name="message"
                                 placeholder="Tu mensaje"
                                 rows={6}
                                 className="bg-white/5 border-white/10 text-white placeholder:text-white/40 resize-none"
@@ -78,7 +86,11 @@ export default function ContactSection() {
                         </Button>
 
                         {status && (
-                            <p className="text-center text-white/60 text-sm mt-2">{status}</p>
+                            <p className={`text-center text-white/60 text-sm mt-2
+                                ${statusType === "loading" ? "text-yellow-400" : ""}
+                                ${statusType === "success" ? "text-green-400" : ""}
+                                ${statusType === "error" ? "text-red-400" : ""}
+                                `}>{status}</p>
                         )}
                     </form>
                 </div>
