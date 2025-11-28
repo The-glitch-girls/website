@@ -3,6 +3,13 @@
 export const sections = ["home", "games", "team", "contact"] as const;
 export type Section = (typeof sections)[number];
 
+const labels: Record<Section, string> = {
+  home: "Inicio",
+  games: "Juegos",
+  team: "Equipo",
+  contact: "Contacto",
+};
+
 interface NavbarProps {
   activeSection: Section;
   setActiveSection: (section: Section) => void;
@@ -27,7 +34,7 @@ export default function NavBar({ activeSection, setActiveSection }: NavbarProps)
               <span className="text-white font-bold text-lg leading-none rubik-glitch-regular">
                 The Glitch Girls
               </span>
-              <span className="text-white/60 text-xs">indie videogame studio</span>
+              <span className="text-white/60 text-xs" style={{ maxWidth: "148px" }}>estudio independiente de videojuegos</span>
             </div>
           </div>
 
@@ -43,7 +50,7 @@ export default function NavBar({ activeSection, setActiveSection }: NavbarProps)
                       : "text-white/80 hover:text-white"
                   }`}
                 >
-                  {section}
+                  {labels[section]}
                 </button>
               </li>
             ))}

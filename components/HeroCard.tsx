@@ -10,7 +10,7 @@ interface HeroCardProps {
 
 export default function HeroCard({ title, type, imageUrl, link, rotateClass }: HeroCardProps) {
     return (
-        <div onClick={() => (window.location.href = link)}
+        <div onClick={() => (window.open(link, "_blank"))}
         className={`
             relative
             w-[90vw] h-[65vw]              /* mobile: grande y proporcional */
@@ -26,9 +26,9 @@ export default function HeroCard({ title, type, imageUrl, link, rotateClass }: H
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
           
-            <div className="absolute bottom-8 left-0 right-0 px-8">
-                <h3 className="text-white font-bold text-3xl mb-2">{title}</h3>
-                <p className="text-white/80 text-base">{type}</p>
+            <div className="absolute bottom-8 left-0 right-0 px-2">
+                <h3 className="text-white font-bold text-xl mb-1">{title}</h3>
+                <p className="text-white text-base">{type}</p>
             </div>
         </div>
     );

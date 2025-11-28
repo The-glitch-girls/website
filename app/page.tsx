@@ -34,7 +34,7 @@ export default function Home() {
               The Glitch Girls
             </h1>
             <p className="text-2xl text-white/70 max-w-2xl mx-auto">
-              indie videogame studio
+              estudio independiente de videojuegos
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export default function Home() {
                     key={index}
                     title={game.title}
                     type={game.type}
-                    imageUrl={game.imageUrl}
+                    imageUrl={game.heroUrl ? game.heroUrl : game.imageUrl}
                     link={game.playLink}
                     rotateClass={game.rotateClass}
                   />
@@ -64,11 +64,10 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-5xl md:text-6xl font-bold text-white mb-4">
-                Games We Made
+                Nuestros juegos
               </h3>
               <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
-                Explore our collection of immersive gaming experiences that push the
-                boundaries of reality and imagination
+                Explora nuestra colección de experiencias de juego inmersivas que desafían los límites de la realidad y la imaginación.
               </p>
 
               {/* Tabs accesibles */}
@@ -78,14 +77,14 @@ export default function Home() {
                 className="inline-flex border-b border-white/40"
               >
                 <FilterTab
-                  label="Released"
+                  label="Lanzados"
                   value="released"
                   activeFilter={activeFilter}
                   setActiveFilter={setActiveFilter}
                 />
 
                 <FilterTab
-                  label="Coming Soon"
+                  label="Próximamente"
                   value="coming"
                   activeFilter={activeFilter}
                   setActiveFilter={setActiveFilter}
@@ -131,9 +130,9 @@ export default function Home() {
       <section className="min-h-screen bg-black py-32">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Our Team</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Nuestro Equipo</h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              Meet the talented individuals behind The Glitch Girls who bring our games to life
+              Conoce a las talentosas personas detrás de The Glitch Girls que dan vida a nuestros juegos.
             </p>
           </div>
 
@@ -163,9 +162,9 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Get In Touch</h2>
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">Ponte en Contacto</h2>
                 <p className="text-lg text-white/60">
-                  Have a question or want to work together? Send us a message and we'll get back to you soon
+                  ¿Tienes una pregunta o quieres trabajar con nosotras? Envíanos un mensaje y te responderemos pronto.
                 </p>
               </div>
 
@@ -173,20 +172,20 @@ export default function Home() {
                 <div>
                   <Input
                     type="email"
-                    placeholder="Your email"
+                    placeholder="Tu correo electrónico"
                     className="bg-white/5 border-white/10 text-white placeholder:text-white/40 h-12"
                   />
                 </div>
                 <div>
                   <Textarea
-                    placeholder="Your message"
+                    placeholder="Tu mensaje"
                     rows={6}
                     className="bg-white/5 border-white/10 text-white placeholder:text-white/40 resize-none"
                   />
                 </div>
                 <Button className="w-full bg-purple-300 hover:bg-purple-400 text-black h-12 text-base font-semibold">
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  Enviar Mensaje
                 </Button>
               </form>
             </div>
