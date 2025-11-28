@@ -46,25 +46,40 @@ export default function ContactSection() {
                         </p>
                     </div>
 
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* honeypot anti bots */}
+                        <input type="text" name="website" style={{ display: "none" }} />
+
                         <div>
-                        <Input
-                            type="email"
-                            placeholder="Tu correo electrónico"
-                            className="bg-white/5 border-white/10 text-white placeholder:text-white/40 h-12"
-                        />
+                            <Input
+                                type="email"
+                                placeholder="Tu correo electrónico"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 h-12"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
                         </div>
+
                         <div>
-                        <Textarea
-                            placeholder="Tu mensaje"
-                            rows={6}
-                            className="bg-white/5 border-white/10 text-white placeholder:text-white/40 resize-none"
-                        />
+                            <Textarea
+                                placeholder="Tu mensaje"
+                                rows={6}
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 resize-none"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            />
                         </div>
-                        <Button className="w-full bg-purple-300 hover:bg-purple-400 text-black h-12 text-base font-semibold">
-                        <Send className="w-4 h-4 mr-2" />
-                        Enviar Mensaje
+
+                        <Button type="submit" className="w-full bg-purple-300 hover:bg-purple-400 text-black h-12 text-base font-semibold">
+                            <Send className="w-4 h-4 mr-2" />
+                            Enviar Mensaje
                         </Button>
+
+                        {status && (
+                            <p className="text-center text-white/60 text-sm mt-2">{status}</p>
+                        )}
                     </form>
                 </div>
             </div>
