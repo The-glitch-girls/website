@@ -34,7 +34,7 @@ export default function NavBar({ activeSection, setActiveSection }: NavbarProps)
               <span className="text-white font-bold text-lg leading-none rubik-glitch-regular">
                 The Glitch Girls
               </span>
-              <span className="text-white/60 text-xs">estudio independiente de videojuegos</span>
+              <span className="text-white/60 text-xs" style={{ maxWidth: "148px" }}>estudio independiente de videojuegos</span>
             </div>
           </div>
 
